@@ -10,7 +10,7 @@ export default function Weather(){
     const [result, setResult] = useState({});
     const [loading, setloading] = useState(false); 
 
-    
+
 
 
     async function fetchData(inputParam){
@@ -42,8 +42,7 @@ export default function Weather(){
  
     function getCurrentDate()
     {
-        return(
-
+        return( 
             new Date().toLocaleDateString('en-us',
                 {
                     weekday: 'long',
@@ -51,8 +50,7 @@ export default function Weather(){
                     day: 'numeric',
                     year: 'numeric'
                 }
-            )
-
+            ) 
         );
     }
 
@@ -60,23 +58,31 @@ export default function Weather(){
         fetchData('Mumbai')
     },[]);
 
-
+ //   console.log(result?.weather[0]?.description);
     return(<div className="main-container">
                 <SearchWeather
                     searchVal={searchVal} 
                     setsearchVal={setsearchVal} 
                     handleSubmit={handleSubmit}  />
-                    {
+                    { 
                         loading ? (<h1>Loading ... Please wait.</h1>) 
                             : (
                                 <div className="info-container">
                                         <p className="city-name">{result?.name},{result?.sys?.country}</p>
                                         <p className="date-value">{getCurrentDate()}</p>
                                     <div className="columnA"> 
-                                        <p className="city-name">{searchVal}</p>
+                                        <p className="descriptionTxt">Description</p>
+                                        <p className="descption">  
+                                            {
+                                                result && result.weather && result.weather[0] ?
+                                                <p className="wind-speed">{result.weather[0]?.description} </p>
+                                                : ""
+                                            }
+                                        </p>
                                     </div>
                                     <div className="columnB">   
-                                        <p className="city-name">{searchVal}</p>
+                                        <p className="descriptionTxt">Wind Speed</p>
+                                        <p className="wind-speed">{result?.wind?.speed}</p>
                                     </div>
                                 </div> 
                             )

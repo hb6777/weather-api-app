@@ -13,14 +13,14 @@ body {
 }
 
 .info-container {
-  border: 2px solid green;
+  border: 0px solid green;
   width: 500px;
   height: 250px;
-  border-radius: 8px;
-  ;
+  border-radius: 8px; 
   position: relative;
   top: -350px;
   left: 290px;
+  background-color: beige;
 }
 
 .info-container .city-name {
@@ -51,6 +51,37 @@ body {
   color: Blue;
   float: right;
   padding-right: 60px;
+}
+
+.info-container .columnB .wind-speed
+{
+color:black;
+}
+
+
+.info-container .columnA .wind-speed
+{
+color:black;
+}
+
+.info-container .descption{
+  font-size: 25px; 
+  color:black;
+  /* font-weight: bold; */
+} 
+
+.info-container .descriptionTxt{
+  font-size: 20px; 
+  color:black; 
+  font-weight: bold;
+  /* font-size: 30px; */
+  border: 0px solid purple;
+  margin-top: 20px;
+}
+
+.wind-speed{
+  font-size: 15px;
+  color: Blue;
 }
 
 .search-container {
