@@ -8,7 +8,9 @@ export default function Weather(){
 
     const [searchVal, setsearchVal] = useState('');
     const [result, setResult] = useState({});
-    const [loading, setloading] = useState(false);
+    const [loading, setloading] = useState(false); 
+
+    
 
 
     async function fetchData(inputParam){
